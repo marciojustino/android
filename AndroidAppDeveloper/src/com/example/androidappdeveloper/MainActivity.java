@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-	
+
 	public final static String EXTRA_MESSAGE = "com.example.androidappdeveloper.MESSAGE";
 
 	@Override
@@ -20,17 +20,33 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	public void onPause(){
-		super.onPause();
+	public void onPause() {
+		super.onPause();	// Always call the superclass method first
 		
-		// Manage onPause activity...
+		// 1. Persist any user's change that needs recovery... 
+		
+		// 2. Release active resources...
 	}
 	
 	@Override
-	public void onStop(){
+	public void onResume(){
+		super.onResume();	// Always call the superclass method first
+		
+		// 1. Initialize resources that released in onPause event...
+	}
+
+	@Override
+	public void onStop() {
 		super.onStop();
 		
-		// Manage onStop activity...
+		// 1. Finalize all active resources...
+	}
+	
+	@Override
+	public void onRestart(){
+		super.onRestart();	// Always call the superclass method first
+
+		// 1. Recover saved data in onStop event...
 	}
 
 	@Override
@@ -39,14 +55,19 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-	public void sendMessage(View view){
+
+	public void sendMessage(View view) {
+		// 1. Create new activity...
 		Intent intent = new Intent(this, DisplayMessageActivity.class);
-		EditText edit = (EditText)findViewById(R.id.edit_message);
+		
+		// 2. Get data to send to new activity...
+		EditText edit = (EditText) findViewById(R.id.edit_message);
 		String message = edit.getText().toString();
-		// Send data to DisplayMessageActivity activity...
+
+		// 1. Send data to DisplayMessageActivity activity...
 		intent.putExtra(EXTRA_MESSAGE, message);
-		// Start new activity...
+		
+		// 2. Start new activity...
 		startActivity(intent);
 	}
 }
