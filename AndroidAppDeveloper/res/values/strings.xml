@@ -7,5 +7,10 @@
     <string name="button_send">Send</string>
     <string name="title_activity_display_message">Sent Message</string>
     <string name="hello_world">Hello world!</string>
+    <string name="button_locate">Locate</string>
+    <string name="button_fragment">Fragment</string>
+    <string name="title_activity_display_fragment">Fragment</string>
+    <string name="fragment_article">Only for tests</string>
+    <string name="fragment_headline_button1">Option 1 ></string>
 
 </resources>
