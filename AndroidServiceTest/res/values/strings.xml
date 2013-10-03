@@ -3,6 +3,8 @@
 
     <string name="app_name">AndroidServiceTest</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="Download">Download</string>
+    <string name="Status">Status: </string>
+    <string name="NotStarted">Not Started</string>
 
 </resources>
