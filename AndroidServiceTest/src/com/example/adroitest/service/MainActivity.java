@@ -1,4 +1,4 @@
-package com.example.androidservicetest;
+package com.example.adroitest.service;
 
 import android.os.Bundle;
 import android.app.Activity;
