@@ -1,14 +1,14 @@
 package com.example.adroitest.service;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
 
 public class MainActivity extends Activity {
 
@@ -28,14 +28,18 @@ public class MainActivity extends Activity {
 							"Download complete. Download URI: " + path,
 							Toast.LENGTH_LONG).show();
 					textView.setText("Download is done!");
-				} else {
-					Toast.makeText(MainActivity.this, "Download failed",
-							Toast.LENGTH_LONG).show();
-					textView.setText("Download failed");
-				}
-			}
-		}
-	};
+                } else if (resultCode == RESULT_CANCELED) {
+                    Toast.makeText(MainActivity.this, path,
+                            Toast.LENGTH_LONG).show();
+                    textView.setText(path);
+                } else {
+                    Toast.makeText(MainActivity.this, "Download failed",
+                            Toast.LENGTH_LONG).show();
+                    textView.setText("Download failed");
+                }
+            }
+        }
+    };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
