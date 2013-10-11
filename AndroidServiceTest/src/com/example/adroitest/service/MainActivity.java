@@ -54,9 +54,9 @@ public class MainActivity extends Activity {
 		super.onResume();
 		registerReceiver(receiver, new IntentFilter(DownloadService.NOTIFICATION));
 	}
-	
+
 	@Override
-	protected void onPause() {		
+	protected void onPause() {
 		super.onPause();
 		unregisterReceiver(receiver);
 	}
@@ -66,12 +66,13 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
-	}	
-	
+	}
+
 	public void onClick(View view){
 		// Start download server...
 		Intent intent = new Intent(this, DownloadService.class);
 		intent.putExtra(DownloadService.FILEPATH, "index.html");
+        intent.putExtra(DownloadService.FILENAME, "index.html");
 		intent.putExtra(DownloadService.URL, "http://www.vogella.com/index.html");
 		startService(intent);
 		textView.setText("Service started");
