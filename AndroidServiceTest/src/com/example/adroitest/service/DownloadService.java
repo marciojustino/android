@@ -12,7 +12,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-import static android.os.Environment.*;
+import static android.os.Environment.MEDIA_MOUNTED;
+import static android.os.Environment.getExternalStorageDirectory;
+import static android.os.Environment.getExternalStorageState;
 
 public class DownloadService extends IntentService
 {
@@ -38,7 +40,7 @@ public class DownloadService extends IntentService
             //1.  Get URL to download...
             String urlPath = intent.getStringExtra(URL);
             //1.1 Check urlPath...
-            if(urlPath.isEmpty())
+            if (urlPath.isEmpty())
             {
                 //1.2 Show warning message and abort service...
                 //todo 1.2
@@ -47,7 +49,8 @@ public class DownloadService extends IntentService
             //2. Get the file name to save...
             String fileName = intent.getStringExtra(FILENAME);
             //2.1 Check fileName...
-            if(fileName.isEmpty()){
+            if (fileName.isEmpty())
+            {
                 //2.2 Show warning message and abort service...
                 //todo 2.2
             }
@@ -107,6 +110,11 @@ public class DownloadService extends IntentService
                     }
                 }
             }
+        } else if (getExternalStorageState().equals(Environment.MEDIA_MOUNTED_READ_ONLY))
+        {
+            //1. Show information message of permissions denied...
+            publishResults("Without permission to access external storage", Activity.RESULT_CANCELED);
+            result = Activity.RESULT_CANCELED;
         } else
         {
             // If external storage not mounted...
@@ -120,7 +128,9 @@ public class DownloadService extends IntentService
             //3. Try save the file in that directory...
             //todo 3
 
+            //4. Show information message of storage not found...
             publishResults("External storage doesn't has mounted", Activity.RESULT_CANCELED);
+            result = Activity.RESULT_CANCELED;
         }
     }
 
