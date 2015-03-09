@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "android.test.com.br.myfirstapp.ui.MapViewActivity"/>
+      <point      
+        x = "500"      
+        y = "2760"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "android.test.com.br.myfirstapp.ui.MainActivity"/>
+      <point      
+        x = "500"      
+        y = "100"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "android.test.com.br.myfirstapp.ui.MainActivity"/>
+      <point      
+        x = "2440"      
+        y = "100"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "android.test.com.br.myfirstapp.MapView"/>
+      <point      
+        x = "496"      
+        y = "2756"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

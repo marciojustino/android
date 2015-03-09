@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">POfView</string>
+    <string name="edit_message">Enter a local name</string>
+    <string name="button_send">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">POfView</string>
+    <string name="title_activity_display_message">Confirm local search?</string>
+
+    <string name="display_message">Location entered</string>
+    <string name="title_activity_display_on_map">Map View</string>
+    <string name="title_activity_initial">InitialActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="welcome_text">Bem vindo ao POfView! Este é um aplicativo que utiliza o Google Maps para fornecer a localização de um ponto desejado, bastando informar um nome ou endereço referente e solicitar a procura.</string>
+    <string name="map_settings">Map Settings</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
