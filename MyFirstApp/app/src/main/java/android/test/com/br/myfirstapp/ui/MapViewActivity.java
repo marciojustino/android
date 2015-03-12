@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.test.com.br.myfirstapp.R;
 import android.test.com.br.myfirstapp.constant.GoogleMapsServiceConstants;
 import android.test.com.br.myfirstapp.entities.GeoPosition;
@@ -17,6 +16,9 @@ import android.test.com.br.myfirstapp.errorhandle.ErrorConstants;
 import android.test.com.br.myfirstapp.intentservices.FetchAddressIntentService;
 import android.test.com.br.myfirstapp.loghandle.LogConstants;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -176,6 +178,35 @@ public class MapViewActivity extends FragmentActivity implements
         handleNewLocation(location, "I am here!");
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Show the menu options using menu_main.xml layout
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_mapview, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Log.i("map_menu", "Selected item: " + id);
+
+        switch (item.getItemId()) {
+            case R.id.action_menu_map_activity_buttonSearch:
+                // todo: Open new field to search
+                break;
+
+            case android.R.id.home:
+                Log.i("map_menu", "Home id pressed!");
+                finish();
+                break;
+
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly

@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_menu_map_activity_buttonSearch"
+        android:title="@string/map_view_search_button"
+        android:icon="@drawable/ic_action_search"
+        android:showAsAction="ifRoom"/>
+</menu>

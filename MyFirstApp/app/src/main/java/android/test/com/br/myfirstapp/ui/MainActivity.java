@@ -38,12 +38,26 @@ public class MainActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_map_settings:
+                Toast.makeText(this, "Settings called", Toast.LENGTH_LONG).show();
+                openMapSettingsActivity();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openMapSettingsActivity() {
+        // todo: change this activity to map's prefer settings - low priority
+        try {
+            Intent intent = new Intent(this, MapSettingsActivity.class);
+            startActivity(intent);
+        }
+        catch (Exception e) {
+            Log.e("activity_action", e.getMessage());
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void searchLocation(View view) {

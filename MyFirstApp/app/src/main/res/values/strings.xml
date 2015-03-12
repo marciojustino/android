@@ -14,4 +14,5 @@
     <string name="welcome_text">Bem vindo ao POfView! Este é um aplicativo que utiliza o Google Maps para fornecer a localização de um ponto desejado, bastando informar um nome ou endereço referente e solicitar a procura.</string>
     <string name="map_settings">Map Settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="map_view_search_button">Search</string>
 </resources>
